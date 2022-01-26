@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>SITE/register</title>
+	<style type="text/css" media="all">
+		button {
+			padding: 8px;
+			width: 47%;
+		}
+	</style>
+</head>
+<body>
+	{% if mode == "signup" %}
+	<form action="/signup" method="post" enctype="multipart/form-data">
+		<input type="email" name="email" id="email" placeholder="example@gmail.com" required /> <br />
+		<input type="password" name="password" id="password" placeholder="password" required /> <br />
+		<input type="text" name="id" id="id" placeholder="Your ID" required /> <br />
+
+		<button type="submit">submit</button>
+	</form>
+	{% else %}
+	<form action="/login" method="post" enctype="multipart/form-data">
+		<input type="text" name="id" id="id" placeholder="Your ID" required /> <br />
+		<input type="password" name="password" id="password" placeholder="password" required /> <br />
+
+		<button type="submit">submit</button>
+	</form>
+	{% endif %}
+</body>
+</html>
